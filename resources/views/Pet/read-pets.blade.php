@@ -35,7 +35,7 @@
                 </td>
 
                 <td>
-                    <a class="btn btn-danger btn" href="/delete/{{$pet->id}}">Delete</a>
+                    <a class="btn btn-danger btn" onclick="return confirmDelete()" href="/delete/{{$pet->id}}">Delete</a>
 
                 </td>
 
@@ -43,5 +43,13 @@
         @endforeach
     </table>
 </div>
+<script>
+    function confirmDelete() {
+        var answer = confirm("Are you sure you want to delete this record?");
+        return answer === true;
+
+    }
+
+</script>
 </body>
 </html>
