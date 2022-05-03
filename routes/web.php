@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\AccountController;
+use App\Http\Controllers\PetsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,11 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/read', [AccountController::class, 'readAccounts']);
-Route::get('/create-from', [AccountController::class, 'createFrom']);
-Route::post('/create', [AccountController::class, 'create']);
-Route::get('/update-from/{id}', [AccountController::class, 'updateFrom']);
-Route::post('/update', [AccountController::class, 'update']);
-Route::get('/delete/{id}', [AccountController::class, 'delete']);
+Route::get('/read', [PetsController::class, 'readPets']);
+Route::get('/create-from', [PetsController::class, 'createFrom']);
+Route::post('/create', [PetsController::class, 'create']);
+Route::get('/update-from/{id}', [PetsController::class, 'updateFrom']);
+Route::post('/update', [PetsController::class, 'update']);
+Route::get('/delete/{id}', [PetsController::class, 'delete']);
 
 

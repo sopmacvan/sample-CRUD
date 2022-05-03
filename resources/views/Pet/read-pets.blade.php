@@ -1,6 +1,6 @@
 <html lang="eng">
 <head>
-    <title>Accounts</title>
+    <title>Pets</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
@@ -8,7 +8,7 @@
 <div class="container-sm">
     <form action="/read" method="GET">
         @csrf
-        <input type="text" name="search" placeholder="Type username">
+        <input type="text" name="search" placeholder="Type pet name">
         <button class="btn btn-outline-primary float-right">Search</button>
 
     </form>
@@ -16,22 +16,26 @@
 
     <table class="table">
         <tr>
-            <th>Username</th>
-            <th>Password</th>
-            <th>Email</th>
+            <th>Id</th>
+            <th>Pet name</th>
+            <th>Pet type</th>
+            <th>Owner name</th>
+            <th>Owner address</th>
         </tr>
-        @foreach($accounts as $account)
+        @foreach($pets as $pet)
             <tr>
-                <td>{{$account->username}}</td>
-                <td>{{$account->password}}</td>
-                <td>{{$account->email}}</td>
+                <td>{{$pet->id}}</td>
+                <td>{{$pet->pet_name}}</td>
+                <td>{{$pet->pet_type}}</td>
+                <td>{{$pet->owner_name}}</td>
+                <td>{{$pet->owner_address}}</td>
 
                 <td>
-                    <a class="btn btn-primary btn" href="/update-from/{{$account->id}}">Edit</a>
+                    <a class="btn btn-primary btn" href="/update-from/{{$pet->id}}">Edit</a>
                 </td>
 
                 <td>
-                    <a class="btn btn-danger btn" href="/delete/{{$account->id}}">Delete</a>
+                    <a class="btn btn-danger btn" href="/delete/{{$pet->id}}">Delete</a>
 
                 </td>
 
