@@ -57,7 +57,7 @@ class PetsController extends Controller
 
     public function delete(Request $request)
     {
-        DB::table('accounts')->find($request->id)->delete();
+        DB::table('pets')->where('id', '=', $request->id)->delete();
         return redirect('read');
 
     }
